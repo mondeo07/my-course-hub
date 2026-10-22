@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 
 interface Course {
   id: number;
@@ -122,9 +123,14 @@ export default function Home() {
                   <span className="text-xl font-bold text-indigo-600">{course.price}</span>
                   <span className="text-sm text-slate-400 line-through">{course.originalPrice}</span>
                 </div>
+                <Link
+                  href="/learn"
+                  className="block w-full mt-4 text-center border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-medium py-2.5 rounded-xl transition duration-200">
+                  ▶ Học thử miễn phí
+                </Link>
                 <button 
                   onClick={() => setSelectedCourse(course)}
-                  className="w-full mt-4 bg-slate-900 hover:bg-indigo-600 text-white font-medium py-2.5 rounded-xl transition duration-200">
+                  className="w-full mt-3 bg-slate-900 hover:bg-indigo-600 text-white font-medium py-2.5 rounded-xl transition duration-200">
                   Đăng ký ngay
                 </button>
               </div>
